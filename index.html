@@ -31,120 +31,102 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // ==========================
-// DATA: FAMILIE FRANK
+// DATA
 // ==========================
 
+// Familie Frank
 var routeFrank = [
-    {
-        name: "Amsterdam",
-        coords: [52.3702, 4.8952],
-        date: "6 juli 1942",
-        persons: ["Anne Frank", "Margot Frank", "Otto Frank", "Edith Frank"],
-        desc: "Onderduik in het Achterhuis."
-    },
-    {
-        name: "Amsterdam (arrestatie)",
-        coords: [52.3702, 4.8952],
-        date: "4 augustus 1944",
-        persons: ["Anne Frank", "Margot Frank", "Otto Frank", "Edith Frank"],
-        desc: "Arrestatie door de Duitse bezetter."
-    },
-    {
-        name: "Westerbork",
-        coords: [52.9167, 6.5833],
-        date: "8 augustus 1944",
-        persons: ["Anne Frank", "Margot Frank", "Otto Frank", "Edith Frank"],
-        desc: "Transport naar doorgangskamp Westerbork."
-    },
-    {
-        name: "Auschwitz",
-        coords: [50.0359, 19.1783],
-        date: "3 september 1944",
-        persons: ["Anne Frank", "Margot Frank", "Otto Frank", "Edith Frank"],
-        desc: "Aankomst in Auschwitz. Scheiding van mannen en vrouwen."
-    },
-    {
-        name: "Bergen-Belsen",
-        coords: [52.7596, 9.9059],
-        date: "oktober 1944",
-        persons: ["Anne Frank", "Margot Frank"],
-        desc: "Anne en Margot worden overgebracht naar Bergen-Belsen."
-    }
+    { name:"Amsterdam", coords:[52.3702,4.8952], date:"6 juli 1942",
+      persons:["Anne Frank","Margot Frank","Otto Frank","Edith Frank"],
+      desc:"Onderduik in het Achterhuis." },
+
+    { name:"Amsterdam (arrestatie)", coords:[52.3702,4.8952], date:"4 augustus 1944",
+      persons:["Anne Frank","Margot Frank","Otto Frank","Edith Frank"],
+      desc:"Arrestatie door de Duitse bezetter." },
+
+    { name:"Westerbork", coords:[52.9167,6.5833], date:"8 augustus 1944",
+      persons:["Anne Frank","Margot Frank","Otto Frank","Edith Frank"],
+      desc:"Transport naar Westerbork." },
+
+    { name:"Auschwitz", coords:[50.0359,19.1783], date:"3 september 1944",
+      persons:["Anne Frank","Margot Frank","Otto Frank","Edith Frank"],
+      desc:"Aankomst en scheiding." },
+
+    { name:"Bergen-Belsen", coords:[52.7596,9.9059], date:"oktober 1944",
+      persons:["Anne Frank","Margot Frank"],
+      desc:"Overplaatsing." }
 ];
 
-// ==========================
-// DATA: DE WINTER + REPATRIERING
-// ==========================
-
+// De Winter + repatriëring
 var routeDeWinter = [
-    {
-        name: "Zutphen",
-        coords: [52.1400, 6.1944],
-        date: "1943",
-        persons: ["Rosa de Winter", "Judy de Winter"],
-        desc: "Arrestatie en vertrek vanuit Zutphen."
-    },
-    {
-        name: "Westerbork",
-        coords: [52.9167, 6.5833],
-        date: "1943",
-        persons: ["Rosa de Winter", "Judy de Winter"],
-        desc: "Transport naar Kamp Westerbork."
-    },
-    {
-        name: "Auschwitz",
-        coords: [50.0359, 19.1783],
-        date: "1943",
-        persons: ["Rosa de Winter", "Judy de Winter"],
-        desc: "Aankomst in Auschwitz."
-    },
-    {
-        name: "Kratzau (Chrastava)",
-        coords: [50.8167, 14.9667],
-        date: "1944",
-        persons: ["Judy de Winter"],
-        desc: "Judy wordt overgebracht naar een dwangarbeiderskamp."
-    },
-    {
-        name: "Odessa",
-        coords: [46.4825, 30.7233],
-        date: "1945",
-        persons: ["Rosa de Winter", "Otto Frank"],
-        desc: "Via Oost-Europa naar Odessa voor repatriëring per schip."
-    },
-    {
-        name: "Marseille",
-        coords: [43.2965, 5.3698],
-        date: "1945",
-        persons: ["Rosa de Winter", "Otto Frank"],
-        desc: "Aankomst per schip in Marseille."
-    },
-    {
-        name: "Nederland (terugkeer)",
-        coords: [52.0907, 5.1214],
-        date: "1945",
-        persons: ["Rosa de Winter", "Otto Frank"],
-        desc: "Terugkeer naar Nederland na repatriëring."
-    }
+    { name:"Zutphen", coords:[52.1400,6.1944], date:"1943",
+      persons:["Rosa de Winter","Judy de Winter"],
+      desc:"Arrestatie." },
+
+    { name:"Westerbork", coords:[52.9167,6.5833], date:"1943",
+      persons:["Rosa de Winter","Judy de Winter"],
+      desc:"Transport." },
+
+    { name:"Auschwitz", coords:[50.0359,19.1783], date:"1943",
+      persons:["Rosa de Winter","Judy de Winter"],
+      desc:"Aankomst." },
+
+    { name:"Kratzau", coords:[50.8167,14.9667], date:"1944",
+      persons:["Judy de Winter"],
+      desc:"Dwangarbeid." },
+
+    { name:"Odessa", coords:[46.4825,30.7233], date:"1945",
+      persons:["Rosa de Winter","Otto Frank"],
+      desc:"Repatriëring via oosten." },
+
+    { name:"Marseille", coords:[43.2965,5.3698], date:"1945",
+      persons:["Rosa de Winter","Otto Frank"],
+      desc:"Aankomst per schip." },
+
+    { name:"Nederland", coords:[52.0907,5.1214], date:"1945",
+      persons:["Rosa de Winter","Otto Frank"],
+      desc:"Terugkeer." },
+
+    // Judy repatriëring
+    { name:"Liberec", coords:[50.7671,15.0562], date:"8 mei 1945",
+      persons:["Judy de Winter"],
+      desc:"Bevrijding." },
+
+    { name:"Praag", coords:[50.0755,14.4378], date:"mei 1945",
+      persons:["Judy de Winter"],
+      desc:"Transport." },
+
+    { name:"Pilsen", coords:[49.7384,13.3736], date:"mei 1945",
+      persons:["Judy de Winter"],
+      desc:"Doortocht." },
+
+    { name:"Bayreuth", coords:[49.9481,11.5783], date:"mei 1945",
+      persons:["Judy de Winter"],
+      desc:"Transport." },
+
+    { name:"België", coords:[50.8503,4.3517], date:"mei 1945",
+      persons:["Judy de Winter"],
+      desc:"Aankomst." },
+
+    { name:"Roermond", coords:[51.1942,5.9870], date:"31 mei 1945",
+      persons:["Judy de Winter","Rosa de Winter"],
+      desc:"Hereniging." }
 ];
 
 // ==========================
 // MARKERS
 // ==========================
 
-function addMarkers(route) {
-    route.forEach(function(stop) {
-
-        var personsList = stop.persons.join(", ");
-
+function addMarkers(route){
+    route.forEach(function(stop){
         L.marker(stop.coords)
-            .addTo(map)
-            .bindPopup(
-                "<b>" + stop.name + "</b><br>" +
-                stop.date + "<br>" +
-                "<i>" + personsList + "</i><br>" +
-                stop.desc
-            );
+        .addTo(map)
+        .bindPopup(
+            "<b>"+stop.name+"</b><br>"+
+            stop.date+"<br>"+
+            "<i>"+stop.persons.join(", ")+"</i><br>"+
+            stop.desc
+        );
     });
 }
 
@@ -155,77 +137,43 @@ addMarkers(routeDeWinter);
 // ROUTES
 // ==========================
 
-// 🔴 Frank deportatie
-var frankRoute = [
-    [52.3702, 4.8952],
-    [52.9167, 6.5833],
-    [53.2194, 6.5665],
-    [53.1833, 7.2167],
-    [53.0793, 8.8017],
-    [52.3759, 9.7320],
-    [52.5200, 13.4050],
-    [51.1079, 17.0385],
-    [50.0359, 19.1783]
-];
+// Frank deportatie
+L.polyline([
+[52.3702,4.8952],[52.9167,6.5833],[53.2194,6.5665],[53.1833,7.2167],
+[53.0793,8.8017],[52.3759,9.7320],[52.5200,13.4050],
+[51.1079,17.0385],[50.0359,19.1783]
+],{color:'red'}).addTo(map);
 
-L.polyline(frankRoute, {color: 'red', weight: 4}).addTo(map);
+// Anne & Margot
+L.polyline([
+[50.0359,19.1783],[52.5200,13.4050],[53.5511,9.9937],[52.7596,9.9059]
+],{color:'blue'}).addTo(map);
 
-// 🔵 Anne & Margot
-var sistersRoute = [
-    [50.0359, 19.1783],
-    [52.5200, 13.4050],
-    [53.5511, 9.9937],
-    [52.7596, 9.9059]
-];
+// De Winter deportatie
+L.polyline([
+[52.1400,6.1944],[52.9167,6.5833],[53.2194,6.5665],[53.1833,7.2167],
+[53.0793,8.8017],[52.3759,9.7320],[52.5200,13.4050],
+[51.1079,17.0385],[50.0359,19.1783]
+],{color:'green'}).addTo(map);
 
-L.polyline(sistersRoute, {color: 'blue', weight: 4}).addTo(map);
+// Judy → Kratzau
+L.polyline([
+[50.0359,19.1783],[50.1109,8.6821],[50.8167,14.9667]
+],{color:'orange',dashArray:'5,5'}).addTo(map);
 
-// 🟢 De Winter deportatie
-var deWinterRoute = [
-    [52.1400, 6.1944],
-    [52.9167, 6.5833],
-    [53.2194, 6.5665],
-    [53.1833, 7.2167],
-    [53.0793, 8.8017],
-    [52.3759, 9.7320],
-    [52.5200, 13.4050],
-    [51.1079, 17.0385],
-    [50.0359, 19.1783]
-];
+// Rosa + Otto repatriëring (zee)
+L.polyline([
+[50.0359,19.1783],[49.8397,24.0297],[46.4825,30.7233],
+[43,34],[38,28],[36,20],[43.2965,5.3698],
+[50.1109,8.6821],[52.0907,5.1214]
+],{color:'black',dashArray:'8,10'}).addTo(map);
 
-L.polyline(deWinterRoute, {color: 'green', weight: 4}).addTo(map);
-
-// 🟡 Judy naar Kratzau
-var judyRoute = [
-    [50.0359, 19.1783],
-    [50.1109, 8.6821],
-    [50.8167, 14.9667]
-];
-
-L.polyline(judyRoute, {
-    color: 'orange',
-    weight: 4,
-    dashArray: '5,5'
-}).addTo(map);
-
-// ⚫ Gedeelde repatriëring (Otto + Rosa)
-var returnRoute = [
-    [50.0359, 19.1783],
-    [49.8397, 24.0297],
-    [46.4825, 30.7233],
-    [43.0, 34.0],
-    [38.0, 28.0],
-    [36.0, 20.0],
-    [43.2965, 5.3698],
-    [50.1109, 8.6821],
-    [52.0907, 5.1214]
-];
-
-L.polyline(returnRoute, {
-    color: 'black',
-    weight: 5,
-    dashArray: '8,10'
-}).addTo(map);
+// Judy repatriëring (land)
+L.polyline([
+[50.8167,14.9667],[50.7671,15.0562],[50.0755,14.4378],
+[49.7384,13.3736],[49.9481,11.5783],
+[50.8503,4.3517],[51.1942,5.9870]
+],{color:'purple'}).addTo(map);
 
 </script>
 
