@@ -24,7 +24,7 @@
 // KAART
 // ==========================
 
-var map = L.map('map').setView([52.1, 5.3], 6);
+var map = L.map('map').setView([52.1, 5.3], 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
@@ -73,7 +73,7 @@ var routeFrank = [
 ];
 
 // ==========================
-// DATA: DE WINTER
+// DATA: DE WINTER + REPATRIERING
 // ==========================
 
 var routeDeWinter = [
@@ -103,12 +103,33 @@ var routeDeWinter = [
         coords: [50.8167, 14.9667],
         date: "1944",
         persons: ["Judy de Winter"],
-        desc: "Overgebracht naar een dwangarbeiderskamp in Kratzau (bron: Anne Frank Stichting)."
+        desc: "Judy wordt overgebracht naar een dwangarbeiderskamp."
+    },
+    {
+        name: "Odessa",
+        coords: [46.4825, 30.7233],
+        date: "1945",
+        persons: ["Rosa de Winter", "Otto Frank"],
+        desc: "Via Oost-Europa naar Odessa voor repatriëring per schip."
+    },
+    {
+        name: "Marseille",
+        coords: [43.2965, 5.3698],
+        date: "1945",
+        persons: ["Rosa de Winter", "Otto Frank"],
+        desc: "Aankomst per schip in Marseille."
+    },
+    {
+        name: "Nederland (terugkeer)",
+        coords: [52.0907, 5.1214],
+        date: "1945",
+        persons: ["Rosa de Winter", "Otto Frank"],
+        desc: "Terugkeer naar Nederland na repatriëring."
     }
 ];
 
 // ==========================
-// MARKERS (ALLES)
+// MARKERS
 // ==========================
 
 function addMarkers(route) {
@@ -134,7 +155,7 @@ addMarkers(routeDeWinter);
 // ROUTES
 // ==========================
 
-// 🔴 Familie Frank tot Auschwitz
+// 🔴 Frank deportatie
 var frankRoute = [
     [52.3702, 4.8952],
     [52.9167, 6.5833],
@@ -147,12 +168,9 @@ var frankRoute = [
     [50.0359, 19.1783]
 ];
 
-L.polyline(frankRoute, {
-    color: 'red',
-    weight: 4
-}).addTo(map);
+L.polyline(frankRoute, {color: 'red', weight: 4}).addTo(map);
 
-// 🔵 Anne & Margot naar Bergen-Belsen
+// 🔵 Anne & Margot
 var sistersRoute = [
     [50.0359, 19.1783],
     [52.5200, 13.4050],
@@ -160,12 +178,9 @@ var sistersRoute = [
     [52.7596, 9.9059]
 ];
 
-L.polyline(sistersRoute, {
-    color: 'blue',
-    weight: 4
-}).addTo(map);
+L.polyline(sistersRoute, {color: 'blue', weight: 4}).addTo(map);
 
-// 🟢 De Winter route tot Auschwitz
+// 🟢 De Winter deportatie
 var deWinterRoute = [
     [52.1400, 6.1944],
     [52.9167, 6.5833],
@@ -178,10 +193,7 @@ var deWinterRoute = [
     [50.0359, 19.1783]
 ];
 
-L.polyline(deWinterRoute, {
-    color: 'green',
-    weight: 4
-}).addTo(map);
+L.polyline(deWinterRoute, {color: 'green', weight: 4}).addTo(map);
 
 // 🟡 Judy naar Kratzau
 var judyRoute = [
@@ -194,6 +206,25 @@ L.polyline(judyRoute, {
     color: 'orange',
     weight: 4,
     dashArray: '5,5'
+}).addTo(map);
+
+// ⚫ Gedeelde repatriëring (Otto + Rosa)
+var returnRoute = [
+    [50.0359, 19.1783],
+    [49.8397, 24.0297],
+    [46.4825, 30.7233],
+    [43.0, 34.0],
+    [38.0, 28.0],
+    [36.0, 20.0],
+    [43.2965, 5.3698],
+    [50.1109, 8.6821],
+    [52.0907, 5.1214]
+];
+
+L.polyline(returnRoute, {
+    color: 'black',
+    weight: 5,
+    dashArray: '8,10'
 }).addTo(map);
 
 </script>
