@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Verbonden Verleden</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+#map {
+    height: 100vh;
+}
+</style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<script>
+var map = L.map('map').setView([52.1, 5.3], 6);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// DATA: Anne Frank route
+var route = [
+    {
+        name: "Amsterdam",
+        coords: [52.3702, 4.8952],
+        date: "6 juli 1942",
+        desc: "Anne Frank duikt onder in het Achterhuis aan de Prinsengracht."
+    },
+    {
+        name: "Westerbork",
+        coords: [52.9167, 6.5833],
+        date: "8 augustus 1944",
+        desc: "Arrestatie en transport naar Kamp Westerbork."
+    },
+    {
+        name: "Auschwitz",
+        coords: [50.0359, 19.1783],
+        date: "3 september 1944",
+        desc: "Deportatie naar Auschwitz-Birkenau per trein."
+    },
+    {
+        name: "Bergen-Belsen",
+        coords: [52.7596, 9.9059],
+        date: "november 1944",
+        desc: "Overgebracht naar Bergen-Belsen, waar Anne later overlijdt."
+    }
+];
+
+// Markers toevoegen
+var latlngs = [];
+
+route.forEach(function(stop) {
+    L.marker(stop.coords)
+        .addTo(map)
+        .bindPopup("<b>" + stop.name + "</b><br>" + stop.date + "<br>" + stop.desc);
+
+    latlngs.push(stop.coords);
+});
+
+// Lijn tekenen
+L.polyline(latlngs, {color: 'red'}).addTo(map);
+
+</script>
+
+</body>
+</html>
